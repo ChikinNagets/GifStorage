@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-gifs-view',
@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./gifs-view.component.sass']
 })
 export class GifsViewComponent {
-  trendingGifs = [];
+  @Input()
+  gifs = {} as any;
 }

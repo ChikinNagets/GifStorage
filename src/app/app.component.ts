@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { AppService } from './app.service';
+import { IGifs } from './config/IGifs';
  
 @Component({
   selector: 'app-root',
@@ -8,10 +9,11 @@ import { AppService } from './app.service';
 })
 export class AppComponent {
   constructor (private AppService: AppService) {}
-
+  
+  trendingGifs = {};
   title = 'GifStorage';
 
   ngOnInit() {
-    this.AppService.getTrendingGifs();
+    this.trendingGifs = this.AppService.getTrendingGifs()
   }
 }
